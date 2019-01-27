@@ -1,0 +1,10 @@
+#gifs p {
+    text-align: center;
+}
+
+#gifs img {
+    /* height: 200px; */
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
