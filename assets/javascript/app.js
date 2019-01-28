@@ -1,7 +1,7 @@
 // Code that creates an initial set of buttons from an array and makes clicking on those buttons call the giphy API to get animated gifs that relate to the text on those buttons
 
 // array of buttons
-var buttonArr = ["dog", "cat", "mouse", "bird", "rabbit", "lizard"];
+var buttonArr = ["bulbasaur", "charmander", "squirtle", "pikachu", "snorlax", "mewtwo"];
 
 // We want the freshest results to begin
 var offset = 0;
@@ -11,7 +11,7 @@ var last;
 
 // function that makes the search buttons
 function makeButton(text) {
-  var button = $("<button class='search' id=" + text + " >" + text + "</button>");
+  var button = $("<button class='search btn' id=" + text + " >" + text + "</button>");
   $("#buttons").append(button);
 };
 
@@ -40,7 +40,7 @@ $("#buttons").on("click", ".search", function () {
   // holla at giphy
   gifPull($(this).attr("id"));
   // add a more button to get more
-  $("#more").append("<button id='more'>More</button>");
+  $("#more").append("<button id='more' class='btn'>More</button>");
   // if we need more, offset it by 10 so we don't get duplicates
   offset = 10;
 });
@@ -65,12 +65,14 @@ function gifPull(search){
     for (var i = 0; i < response.data.length; i++) {
       // create var that represents the box that contains the rating and image
       var gif = $(" \
-        <div class=col-md-4> \
-          <p>Rating: " + response.data[i].rating.toUpperCase() + "</p>\
-          <img src=" + response.data[i].images.fixed_height_still.url +
-          " data-still=" + response.data[i].images.fixed_height_still.url + 
-          " data-animate=" +  response.data[i].images.fixed_height.url + 
-          " data-state='still' class='gif' /> \
+        <div class='col-md-4'> \
+          <p>Rating: " + response.data[i].rating.toUpperCase() + "</p> \
+          <div class='gifbox'> \
+            <img src=" + response.data[i].images.fixed_height_still.url +
+            " data-still=" + response.data[i].images.fixed_height_still.url + 
+            " data-animate=" +  response.data[i].images.fixed_height.url + 
+            " data-state='still' class='gif' /> \
+          </div> \
         </div>");
       $("#gifs").append(gif);
     };
@@ -89,3 +91,6 @@ $("#gifs").on("click", ".gif", function () {
     $(this).attr("src", $(this).attr("data-still"));
   }
 });
+
+
+

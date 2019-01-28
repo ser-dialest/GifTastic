@@ -1,10 +1,166 @@
-#gifs p {
+body {
+    background-image: url("../images/background.png");
+    background-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 1rem;
+    height: 34px;
+    margin: 10px;
     text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #F1F0F6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: #685850;
+    /* background: #006860; */
+    min-height: 100vh;
+}
+
+.gifbox {
+    background-image: url("../images/GIFBackground.png");
+    /* margin: 10px; */
+    width: 100%;
+    height: 220px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#add {
+    display: flex;
+    justify-content: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+#gifs {
+    background: #B8A8E8;
+    border: #A098B8 10px;
+    border-style: solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+#gifs p {
+    color: #F1F0F6;
+    text-align: center;
+    font-weight: bold;
 }
 
 #gifs img {
     /* height: 200px; */
-    display: block;
-    margin: auto;
+
+    /* margin: auto; */
     padding: 10px;
+    max-width: 100%;
 }
+
+#more {
+    display: flex;
+    justify-content: center;
+}
+
+#title1 {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+#title2 {
+    width:60%;
+    margin: auto;
+    display: block;
+}
+
+
+/* The following is styling for a function that is not yet implememnted */
+.normal {
+    background: #A8A878;
+}
+
+.fire {
+    background: #F08030;
+}
+
+.fighting {
+    background: #C03028;
+}
+
+.water {
+    background: #6890F0;
+}
+
+.flying {
+    background: #A890F0;
+}
+
+.grass {
+    background: #78C850;
+}
+
+.poison {
+    background: #A040A0;
+}
+
+.electric {
+    background: #F8D030;
+}
+
+.ground {
+    background: #E0C068;
+}
+
+.psychic {
+    background: #F85888;
+}
+
+.rock {
+    background: #B8A038;
+}
+
+.ice {
+    background: #98D8D8;
+}
+
+.bug {
+    background: #A8B820;
+}
+
+.dragon {
+    background: #7038F8;
+}
+
+.ghost {
+    background: #705898;
+}
+
+.dark {
+    background: #705848;
+}
+
+.steel {
+    background: #B8B8D0;
+}
+
+.fairy {
+    background: #EE99AC;
+}
+
