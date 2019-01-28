@@ -39,6 +39,16 @@ input {
     margin-bottom: 20px;
 }
 
+.type {
+    border-radius: 4px;
+    color: #F1F0F6;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 6px 12px;
+    
+}
+
 #add {
     display: flex;
     justify-content: center;
@@ -66,12 +76,23 @@ input {
 }
 
 #gifs img {
-    /* height: 200px; */
-
-    /* margin: auto; */
     padding: 10px;
     max-width: 100%;
 }
+
+#info {
+    background:  #F1F0F6;
+    color: black;
+    font-size: 2em;
+    border-radius: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 
 #more {
     display: flex;
@@ -91,8 +112,7 @@ input {
     display: block;
 }
 
-
-/* The following is styling for a function that is not yet implememnted */
+/* Colors for the 18 pokemon types */
 .normal {
     background: #A8A878;
 }
@@ -165,3 +185,16 @@ input {
     background: #EE99AC;
 }
 
+@media only screen and (max-width: 600px) {
+    .container {
+        width:100%;
+    }
+
+    .type {
+        margin: 10px;
+    }
+
+    #info {
+        flex-wrap: wrap;
+    }
+  }

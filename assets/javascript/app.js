@@ -829,13 +829,16 @@ function makeButton(text) {
   for (var i = 0; i < pokemon.length; i++) {
     if (pokemon[i].indexOf(text.toLowerCase()) != -1) {
       // If so, make a button
-      var button = $("<button class='search btn " + pokemon[i][1] + "' id=" + text + " >" + text.toUpperCase() + "</button>");
+      var button = $("<button class='search btn " + pokemon[i][1] + "' id=" + i + " >" + text.toUpperCase() + "</button>");
       $("#buttons").append(button);
       var isPokemon = true;
     }
   }
   $("#user-value").val("");
-  if (!isPokemon) {
+  if (isPokemon) {
+    $("#user-value").attr("placeholder", "");
+  }
+  else {
     $("#user-value").attr("placeholder", "THAT'S NOT A POKEMON");
   }
 };
@@ -856,14 +859,25 @@ $("#user-search").on("click", function (event) {
 
 // what happens when you click the search buttons
 $("#buttons").on("click", ".search", function () {
-  console.log("click " + $(this).attr("id"));
   offset = 0;
   last = $(this).attr("id");
-  // clear everything out
-  $("#gifs").html("");
+  // clear more (if it exists) so it can be added at the end
   $("#more").html("");
+  // Add an area that will display some information about the pokemon in question: ID#, Name, Type
+  $("#gifs").html(" \
+    <div id='info'>  \
+      <span>NO. " + last + "</span> \
+      <span>" + pokemon[last][0].toUpperCase() + "</span> \
+      <div class='type " + pokemon[last][1] + "'><span>" + pokemon[last][1].toUpperCase() + "</span> \
+    </div> \
+  ");
+  // Add second type - if there is a second type
+  if (pokemon[last][2] != "") {
+    $("#info").append("<div class='type " + pokemon[last][2] + "'><span>" + pokemon[last][2].toUpperCase() + "</span>")
+  };
+  
   // holla at giphy
-  gifPull($(this).attr("id"));
+  gifPull(pokemon[last][0]);
   // add a more button to get more
   $("#more").append("<button id='more' class='btn normal'>More</button>");
   // if we need more, offset it by 10 so we don't get duplicates
@@ -872,7 +886,7 @@ $("#buttons").on("click", ".search", function () {
 
 // how to get more gifs with the same subject
 $("#more").on("click", function () {
-  gifPull(last);
+  gifPull(pokemon[last][0]);
   offset += 10;
 });
 
@@ -885,7 +899,6 @@ function gifPull(search){
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);  // Checking
     // for each of the responses
     for (var i = 0; i < response.data.length; i++) {
       // create var that represents the box that contains the rating and image
