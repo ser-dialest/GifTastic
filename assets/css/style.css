@@ -185,7 +185,7 @@ input {
     background: #EE99AC;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
     .container {
         width:100%;
     }
@@ -196,5 +196,9 @@ input {
 
     #info {
         flex-wrap: wrap;
+    }
+
+    #info span {
+        margin: 0px 10px;
     }
   }

@@ -15,6 +15,9 @@ At the bottom, a button will appear that will allow you to summon up to 10 more 
 
 There is also an input field that allows the user to input Pokemon he or she wants to see.
 As mentioned before, this is a site for viewing Pokemon, so it will first check to see if what has been entered is, in fact, a Pokemon.
+(Of course, I can't control what GIFs GIPHY think has to do with the keyword!)
 If it is, a new button will be created in the color of the primary type of that Pokemon, which will have all the functionality of the pre-existing buttons.
 
 Colors and formatting inspired by the Pokemon Ruby Summary Screen.
+
+Should be mobile friendly!
