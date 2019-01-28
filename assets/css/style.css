@@ -81,6 +81,7 @@ input {
 #title1 {
     width: 80%;
     margin: auto;
+    margin-top: 10px;
     display: block;
 }
 
